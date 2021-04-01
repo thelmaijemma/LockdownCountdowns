@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>Lockdown Countdown</title>
+  </head>
+  <body>
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+    @media screen and (max-width: 749px) {
+      div .flex1{
+        width: 60px;
+      height: 45px;
+       font-size: xx-large;
+    }
+
+    div .flex2{
+      width: 60px;
+      height: 30px;
+      font-size: small;
+    }
+    }
+    
+     @media screen and (min-width: 750px) {
+      div .flex1{
+      width: 78px;
+      height: 58px;
+      font-size: 42px;
+      padding-bottom: 10px;
+    }
+
+    div .flex2{
+      width: 78px;
+      height: 34px;
+    }
+     .toobig{
+      background-size: 100%;
+    }
+    }
+    /* end mobile first */
+ 
+
+		.carousel-item {
+			height: 32rem;
+			background: grey;
+      color: white;
+      position: relative;
+		}
+    .container{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding-bottom: 50px;
+    }
+    .overlay-image{
+      position: absolute;
+      top: 0; 
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-position: center;
+      background-size: cover;
+      /*opacity: 0.5;*/
+    }
+    .container, .days, .hours, .minutes, .seconds, .freedom{
+      display: flex;
+    }
+    .days, .hours, .minutes, .seconds{
+      flex-direction: column;
+    }
+    .container{
+      justify-content: space-around;
+    }
+    div .flex1{
+      background-color:  #21262b;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      opacity: 0.7;
+    }
+    div .flex2{
+      padding-top: 5%;
+      background-color: yellow;
+      color: #21262b;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      opacity: 0.9;
+    }
+    .big{
+      width: 90px;
+      height: 75px;
+      background-color:  #21262b;
+      text-align: center;
+      padding-top: 20%;
+      padding-bottom: 10%;
+    }
+   
+	</style>
+  <div class="flexbox">
+    <div id="first" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+     <li data-target="#first"  data-slide-to="0" class="active"></li> 
+    <li data-target="#first"  data-slide-to="1" class="active"></li> 
+    </ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+           <div class="overlay-image" style="background-image: url(./images/hike2.jpg);"></div> 
+				<div class="container">
+                           <div class="days">
+      <div class="flex1 day1">0</div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour1">0</div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute1">0</div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second1">0</div>
+      <div class="flex2">Seconds</div>
+    </div>
+
+        </div>
+      </div>
+      <div class="carousel-item">
+           <div class="overlay-image" style="background-image: url(./images/parkmeet.jpg);"></div> 
+				<div class="container">
+     <div class="days">
+      <div class="flex1 day1">0</div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour1">0</div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute1">0</div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second1">0</div>
+      <div class="flex2">Seconds</div>
+    </div>
+        </div>
+      </div>
+  </div>
+</div>
+	<div id="second" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+     <li data-target="#second"  data-slide-to="0" class="active"></li> 
+     <li data-target="#second" data-slide-to="1"></li> 
+     <li data-target="#second" data-slide-to="2"></li> 
+    </ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+           <div class="overlay-image" style="background-image: url(./images/picnic.png);"></div> 
+				<div class="container">
+       <div class="days">
+      <div class="flex1 day2">0</div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour2">0</div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute2">0</div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second2">0</div>
+      <div class="flex2">Seconds</div>
+    </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+         <div class="overlay-image" style="background-image: url(./images/garden.jpg);"></div> 
+        <div class="container">
+                  <div class="days">
+      <div class="flex1 day2">0</div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour2">0</div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute2">0</div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second2">0</div>
+      <div class="flex2">Seconds</div>
+    </div>
+        </div>
+      </div>
+        <div class="carousel-item">
+         <div class="overlay-image" style="background-image: url(./images/tennis.jpg);"></div> 
+        <div class="container">
+                  <div class="days">
+      <div class="flex1 day2">0</div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour2">0</div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute2">0</div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second2">0</div>
+      <div class="flex2">Seconds</div>
+    </div>
+        </div>
+      </div>
+  </div>
+</div>
+ <div id="third" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+     <li data-target="#third"  data-slide-to="0" class="active"></li> 
+     <li data-target="#third" data-slide-to="1"></li> 
+     <li data-target="#third" data-slide-to="2"></li> 
+    </ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+           <div class="overlay-image" style="background-image: url(./images/outdine.jpg);"></div>
+             <div class="container"> 
+				       <div class="days">
+      <div class="flex1 day3"></div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour3"></div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute3"></div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second3"></div>
+      <div class="flex2">Seconds</div>
+    </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+         <div class="overlay-image" style="background-image: url(./images/shopping.png);"></div> 
+        <div class="container">
+        <div class="days">
+      <div class="flex1 day3"></div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour3"></div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute3"></div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second3"></div>
+      <div class="flex2">Seconds</div>
+    </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+         <div class="overlay-image" style="background-image: url(./images/gym.jpeg);"></div> 
+        <div class="container">
+      <div class="days">
+      <div class="flex1 day3"></div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour3"></div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute3"></div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second3"></div>
+      <div class="flex2">Seconds</div>
+    </div>
+        </div>
+      </div>
+  </div>
+</div>
+ <div id="fourth" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+     <li data-target="#fourth"  data-slide-to="0" class="active"></li> 
+     <li data-target="#fourth" data-slide-to="1"></li> 
+     <li data-target="#fourth" data-slide-to="2"></li> 
+    </ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+           <div class="overlay-image toobig" style="background-image: url(./images/grandma.jpg);"></div> 
+				<div class="container">
+  <div class="days">
+      <div class="flex1 day4"></div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour4"></div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute4"></div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second4"></div>
+      <div class="flex2">Seconds</div>
+    </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+         <div class="overlay-image" style="background-image: url(./images/jet.jpg);"></div> 
+        <div class="container">
+   <div class="days">
+      <div class="flex1 day4"></div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour4"></div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute4"></div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second4"></div>
+      <div class="flex2">Seconds</div>
+    </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+         <div class="overlay-image" style="background-image: url(./images/home.jpeg);"></div> 
+        <div class="container">
+    <div class="days">
+      <div class="flex1 day4"></div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour4"></div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute4"></div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second4"></div>
+      <div class="flex2">Seconds</div>
+    </div>
+        </div>
+      </div>
+  </div>
+</div>
+    <div id="fifth" class="carousel slide carousel-fade" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+           <div class="overlay-image" style="background-image: url(./images/billie.jpg);"></div> 
+				<div class="container">
+    <div class="days">
+      <div class="flex1 day5"></div>
+      <div class="flex2">Days</div>
+    </div>
+    <div class="hours">
+      <div class="flex1 hour5"></div>
+      <div class="flex2">Hours</div>
+    </div>
+    <div class="minutes">
+      <div class="flex1 minute5"></div>
+      <div class="flex2">Minutes</div>
+    </div>
+    <div class="seconds">
+      <div class="flex1 second5"></div>
+      <div class="flex2">Seconds</div>
+    </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+</div>
+
+  </body>
+</html>
