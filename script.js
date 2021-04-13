@@ -61,11 +61,17 @@ var Date3 = new Date('April 12, 2021 00:00:00').getTime();
       var s = Math.floor((gap % (minute)) / second);
 
   
-     
+     if(gap > 0){
      $( ".day3").html( "<p>"+ d +"</p>" );
          $( ".hour3").html( "<p>"+ h +"</p>" );
          $( ".minute3").html( "<p>"+ m +"</p>" );
          $( ".second3").html( "<p>"+ s +"</p>" );
+     } else {
+          $( ".day3").html( "<p>0</p>" );
+         $( ".hour3").html( "<p>0</p>" );
+         $( ".minute3").html( "<p>0</p>" );
+         $( ".second3").html( "<p>0</p>" );
+     }
         
       }
       var Date4 = new Date('May 17, 2021 00:00:00').getTime();
@@ -85,10 +91,17 @@ var Date3 = new Date('April 12, 2021 00:00:00').getTime();
 
   
      
+    if(gap > 0){
      $( ".day4").html( "<p>"+ d +"</p>" );
          $( ".hour4").html( "<p>"+ h +"</p>" );
          $( ".minute4").html( "<p>"+ m +"</p>" );
          $( ".second4").html( "<p>"+ s +"</p>" );
+     } else {
+          $( ".day4").html( "<p>0</p>" );
+         $( ".hour4").html( "<p>0</p>" );
+         $( ".minute4").html( "<p>0</p>" );
+         $( ".second4").html( "<p>0</p>" );
+     }
         
       }
     var Date5 = new Date('June 21, 2021 00:00:00').getTime();
@@ -108,14 +121,20 @@ var Date3 = new Date('April 12, 2021 00:00:00').getTime();
 
   
      
+     if(gap > 0){
      $( ".day5").html( "<p>"+ d +"</p>" );
          $( ".hour5").html( "<p>"+ h +"</p>" );
          $( ".minute5").html( "<p>"+ m +"</p>" );
          $( ".second5").html( "<p>"+ s +"</p>" );
+     } else {
+          $( ".day5").html( "<p>0</p>" );
+         $( ".hour5").html( "<p>0</p>" );
+         $( ".minute5").html( "<p>0</p>" );
+         $( ".second5").html( "<p>0</p>" );
+     }
         
       }
       setInterval(function(){
-      // OKAY, I am commenting out countdowns as they progress but obviously, this can also be automated
         //newDay1();
         //newDay2();
         newDay3();
